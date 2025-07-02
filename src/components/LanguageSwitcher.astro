@@ -1,0 +1,220 @@
+---
+---
+
+<div class="language-switcher">
+  <button id="lang-fr" class="lang-btn active" data-lang="fr">
+    <span class="flag">🇫🇷</span>
+    <span class="text">FR</span>
+  </button>
+  <button id="lang-en" class="lang-btn" data-lang="en">
+    <span class="flag">🇬🇧</span>
+    <span class="text">EN</span>
+  </button>
+</div>
+
+<style>
+  .language-switcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 4px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+  }
+
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lang-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #6366f1, #d946ef);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+  }
+
+  .lang-btn:hover {
+    color: #374151;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+  }
+
+  .lang-btn:hover::before {
+    opacity: 0.1;
+  }
+
+  .lang-btn.active {
+    background: linear-gradient(135deg, #6366f1, #d946ef);
+    color: white;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .lang-btn.active::before {
+    opacity: 0;
+  }
+
+  .flag {
+    font-size: 18px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+
+  .text {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 768px) {
+    .language-switcher {
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .lang-btn {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .lang-btn:hover {
+      color: white;
+    }
+    
+    .lang-btn.active {
+      background: linear-gradient(135deg, #6366f1, #d946ef);
+      color: white;
+    }
+  }
+</style>
+
+<script>
+  import { translations, type Language } from '../i18n/translations';
+
+  class LanguageManager {
+    private currentLang: Language = 'fr';
+    
+    constructor() {
+      this.init();
+    }
+    
+    private init() {
+      this.currentLang = this.getInitialLanguage();
+      this.updateUI();
+      this.bindEvents();
+      this.translatePage();
+    }
+    
+    private getInitialLanguage(): Language {
+      if (typeof window !== 'undefined') {
+        const stored = localStorage.getItem('preferred-language') as Language;
+        if (stored && ['fr', 'en'].includes(stored)) {
+          return stored;
+        }
+        
+        const browserLang = navigator.language.toLowerCase();
+        if (browserLang.startsWith('fr')) return 'fr';
+        if (browserLang.startsWith('en')) return 'en';
+      }
+      return 'fr';
+    }
+    
+    private bindEvents() {
+      const langButtons = document.querySelectorAll('.lang-btn');
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = e.currentTarget as HTMLElement;
+          const lang = target.dataset.lang as Language;
+          this.setLanguage(lang);
+        });
+      });
+    }
+    
+    private setLanguage(lang: Language) {
+      this.currentLang = lang;
+      localStorage.setItem('preferred-language', lang);
+      this.updateUI();
+      this.translatePage();
+      
+      // Add visual feedback
+      this.showLanguageChangeEffect();
+    }
+    
+    private showLanguageChangeEffect() {
+      const body = document.body;
+      body.style.transition = 'opacity 0.2s ease';
+      body.style.opacity = '0.95';
+      
+      setTimeout(() => {
+        body.style.opacity = '1';
+      }, 200);
+    }
+    
+    private updateUI() {
+      const langButtons = document.querySelectorAll('.lang-btn');
+      langButtons.forEach(btn => {
+        const btnLang = (btn as HTMLElement).dataset.lang;
+        btn.classList.toggle('active', btnLang === this.currentLang);
+      });
+    }
+    
+    private getTranslation(key: string): string {
+      const keys = key.split('.');
+      let value: any = translations[this.currentLang];
+      
+      for (const k of keys) {
+        value = value?.[k];
+      }
+      
+      return value || key;
+    }
+    
+    private translatePage() {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (key) {
+          const translation = this.getTranslation(key);
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            (element as HTMLInputElement).placeholder = translation;
+          } else {
+            element.textContent = translation;
+          }
+        }
+      });
+      
+      const htmlElements = document.querySelectorAll('[data-i18n-html]');
+      htmlElements.forEach(element => {
+        const key = element.getAttribute('data-i18n-html');
+        if (key) {
+          const translation = this.getTranslation(key);
+          element.innerHTML = translation;
+        }
+      });
+      
+      const titleKey = document.documentElement.getAttribute('data-i18n-title');
+      if (titleKey) {
+        document.title = this.getTranslation(titleKey);
+      }
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    new LanguageManager();
+  });
+</script>

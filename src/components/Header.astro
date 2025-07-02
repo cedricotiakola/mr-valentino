@@ -1,0 +1,145 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200/50 transition-all duration-300 shadow-sm">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo/Brand -->
+      <a href="#home" class="group flex items-center space-x-3 hover:scale-105 transition-transform duration-300">
+        <div class="w-10 h-10 bg-gradient-brand rounded-xl flex items-center justify-center shadow-brand">
+          <span class="text-white font-bold text-lg">V</span>
+        </div>
+        <div class="hidden sm:block">
+          <div class="text-xl font-bold bg-gradient-to-r from-primary-600 to-soul-500 bg-clip-text text-transparent">
+            Valentino Nguelieu
+          </div>
+          <div class="text-xs text-gray-500 font-medium tracking-wide">
+            LA VOIX DU CŒUR
+          </div>
+        </div>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link" data-i18n="nav.home">Accueil</a>
+        <a href="#about" class="nav-link" data-i18n="nav.about">À propos</a>
+        <a href="#music" class="nav-link" data-i18n="nav.music">Musique</a>
+        <a href="#news" class="nav-link" data-i18n="nav.news">Actualités</a>
+        <a href="#events" class="nav-link" data-i18n="nav.events">Événements</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+
+      <!-- Language Switcher & Mobile Menu Button -->
+      <div class="flex items-center space-x-4">
+        <div class="hidden md:block">
+          <LanguageSwitcher />
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-200/50">
+      <div class="flex flex-col space-y-3">
+        <a href="#home" class="nav-link-mobile" data-i18n="nav.home">Accueil</a>
+        <a href="#about" class="nav-link-mobile" data-i18n="nav.about">À propos</a>
+        <a href="#music" class="nav-link-mobile" data-i18n="nav.music">Musique</a>
+        <a href="#news" class="nav-link-mobile" data-i18n="nav.news">Actualités</a>
+        <a href="#events" class="nav-link-mobile" data-i18n="nav.events">Événements</a>
+        <a href="#contact" class="nav-link-mobile" data-i18n="nav.contact">Contact</a>
+        
+        <!-- Mobile Language Switcher -->
+        <div class="pt-4 border-t border-gray-200/50">
+          <LanguageSwitcher />
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav-link {
+    @apply text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 relative px-3 py-2 rounded-lg hover:bg-primary-50;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #d946ef);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 1px;
+  }
+  
+  .nav-link:hover::after {
+    width: 80%;
+  }
+  
+  .nav-link-mobile {
+    @apply text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 py-3 px-4 rounded-lg hover:bg-primary-50;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = document.querySelectorAll('.nav-link-mobile');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+
+    // Smooth scroll for all navigation links
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+    allLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.substring(1);
+        const targetElement = document.getElementById(targetId || '');
+        if (targetElement) {
+          const headerHeight = 80;
+          const targetPosition = targetElement.offsetTop - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Header scroll effect
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
+        header?.classList.add('shadow-lg');
+        header?.classList.remove('shadow-sm');
+      } else {
+        header?.classList.remove('shadow-lg');
+        header?.classList.add('shadow-sm');
+      }
+      
+      lastScrollY = currentScrollY;
+    });
+  });
+</script>

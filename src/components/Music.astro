@@ -1,0 +1,153 @@
+---
+---
+
+<section id="music" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <span data-i18n="music.title">Écoutez ma voix.</span> <span class="text-primary-600" data-i18n="music.titleAccent">Découvrez mon monde.</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-i18n="music.description">
+          Plongez dans mon univers musical à travers mes interprétations et performances live.
+        </p>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mt-6"></div>
+      </div>
+
+      <!-- Music Player Section -->
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <!-- Audio Player -->
+        <div class="animate-on-scroll">
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6" data-i18n="music.availableTracks">Titres disponibles</h3>
+            
+            <div class="space-y-4">
+              <div class="bg-gray-50 rounded-xl p-4 hover:bg-primary-50 transition-colors cursor-pointer group">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 group-hover:text-primary-700" data-i18n="music.tracks.jeTaime">Je t'aime</h4>
+                    <p class="text-sm text-gray-600" data-i18n="music.trackSubtitles.jeTaime">Reprise – Lara Fabian</p>
+                  </div>
+                  <button class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M8 5v10l8-5-8-5z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 hover:bg-primary-50 transition-colors cursor-pointer group">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 group-hover:text-primary-700" data-i18n="music.tracks.aline">Aline</h4>
+                    <p class="text-sm text-gray-600" data-i18n="music.trackSubtitles.aline">Reprise – Christophe</p>
+                  </div>
+                  <button class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M8 5v10l8-5-8-5z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 hover:bg-primary-50 transition-colors cursor-pointer group">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 group-hover:text-primary-700" data-i18n="music.tracks.bluesAcadien">Blues Acadien</h4>
+                    <p class="text-sm text-gray-600" data-i18n="music.trackSubtitles.bluesAcadien">Performance live – Caraquet 2024</p>
+                  </div>
+                  <button class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M8 5v10l8-5-8-5z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Video -->
+        <div class="animate-on-scroll">
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6" data-i18n="music.featuredVideo">Vidéo à la une</h3>
+            <div class="relative aspect-video bg-gray-900 rounded-xl overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg" 
+                alt="Performance CCNB sur scène" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <button class="w-20 h-20 bg-white/90 hover:bg-white text-primary-600 rounded-full flex items-center justify-center transition-all transform hover:scale-110">
+                  <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8 5v10l8-5-8-5z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-4">Performance gagnante - CCNB sur scène 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Gallery -->
+      <div class="animate-on-scroll">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8" data-i18n="music.notableVideos">Vidéos marquantes</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow">
+            <div class="relative aspect-video">
+              <img 
+                src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg" 
+                alt="CCNB sur scène" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                <button class="w-16 h-16 bg-white/90 text-primary-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
+                  <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8 5v10l8-5-8-5z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">Performance CCNB sur scène</h4>
+              <p class="text-gray-600" data-i18n="music.videoDescriptions.ccnb">La performance qui m'a valu la victoire au concours CCNB sur scène 2024.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow">
+            <div class="relative aspect-video">
+              <img 
+                src="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg" 
+                alt="Gala de Caraquet" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                <button class="w-16 h-16 bg-white/90 text-primary-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
+                  <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8 5v10l8-5-8-5z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">Finale Gala de Caraquet 2024</h4>
+              <p class="text-gray-600" data-i18n="music.videoDescriptions.caraquet">Ma performance finale qui m'a valu le coup de cœur du public.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Releases -->
+      <div class="mt-16 animate-on-scroll">
+        <div class="bg-gradient-to-br from-primary-600 to-accent-600 rounded-2xl p-8 text-white text-center">
+          <h3 class="text-2xl font-bold mb-4" data-i18n="music.upcomingReleases">Sorties à venir</h3>
+          <p class="text-lg mb-6" data-i18n="music.epInPreparation">EP en préparation — prévu pour début 2026</p>
+          <button class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors" data-i18n="music.beNotified">
+            Être notifié·e
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
