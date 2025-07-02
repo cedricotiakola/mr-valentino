@@ -13,7 +13,7 @@ export const translations = {
     
     // Hero Section
     hero: {
-      title: 'Valentino Nguelieu',
+      title: 'Mr Valentino',
       subtitle: 'La voix du cœur. L\'émotion sans filtre.',
       description: 'Chanteur franco-camerounais, passionné par la musique qui émeut et rassemble.',
       listenMusic: 'Écouter ma musique',
@@ -215,7 +215,7 @@ export const translations = {
     
     // Hero Section
     hero: {
-      title: 'Valentino Nguelieu',
+      title: 'Mr Valentino',
       subtitle: 'The voice of the heart. Unfiltered emotion.',
       description: 'Franco-Cameroonian singer, passionate about music that moves and brings people together.',
       listenMusic: 'Listen to my music',
