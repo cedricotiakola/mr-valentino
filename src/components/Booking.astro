@@ -1,48 +1,49 @@
 ---
 ---
 
-<section id="booking" class="py-20 bg-white">
-  <div class="container mx-auto px-4">
+<section id="booking" class="py-12 sm:py-16 lg:py-20 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16 animate-on-scroll">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <div class="text-center mb-12 sm:mb-16 animate-on-scroll">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
           <span data-i18n="booking.title">Réservez</span> <span class="text-accent-500" data-i18n="booking.titleAccent">vos billets</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-i18n="booking.description">
+        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4" data-i18n="booking.description">
           Sécurisez votre place pour mes prochaines performances. Places limitées !
         </p>
-        <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mt-6"></div>
+        <div class="w-16 sm:w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mt-4 sm:mt-6"></div>
       </div>
 
       <!-- Booking Form -->
-      <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 animate-on-scroll">
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">
-              <span>🎤 </span><span data-i18n="booking.eventTitle">Festival Acadien – 10 août 2025 – Caraquet</span>
+      <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 animate-on-scroll">
+        <div class="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+          <div class="mb-6 sm:mb-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 flex items-start">
+              <span class="mr-2">🎤</span>
+              <span data-i18n="booking.eventTitle">Festival Acadien – 10 août 2025 – Caraquet</span>
             </h3>
-            <div class="grid md:grid-cols-4 gap-4 text-sm text-gray-600 mb-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">
               <div class="flex items-center">
-                <svg class="w-4 h-4 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 19h00
               </div>
               <div class="flex items-center">
-                <svg class="w-4 h-4 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 <span data-i18n="booking.mainStage">Scène principale, Caraquet, NB</span>
               </div>
               <div class="flex items-center">
-                <svg class="w-4 h-4 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                 </svg>
                 <span>15 $ <span data-i18n="booking.perPerson">/ personne</span></span>
               </div>
               <div class="flex items-center">
-                <svg class="w-4 h-4 mr-2 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                 </svg>
                 <span data-i18n="common.limitedSeats">Places limitées</span>
@@ -50,18 +51,18 @@
             </div>
           </div>
 
-          <form class="space-y-6" action="#" method="POST">
-            <div class="grid md:grid-cols-2 gap-6">
+          <form class="space-y-4 sm:space-y-6" action="#" method="POST">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">
-                  <span data-i18n="booking.fullName">Nom complet</span> <span data-i18n="booking.required">*</span>
+                  <span data-i18n="booking.fullName">Nom complet</span> <span data-i18n="booking.required" class="text-red-500">*</span>
                 </label>
                 <input 
                   type="text" 
                   id="fullName" 
                   name="fullName" 
                   required 
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 outline-none transition-all"
+                  class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 outline-none transition-all text-sm sm:text-base"
                   data-i18n="booking.fullNamePlaceholder"
                   placeholder="Votre nom et prénom"
                 />
@@ -69,14 +70,14 @@
 
               <div>
                 <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-                  <span data-i18n="booking.email">Adresse e-mail</span> <span data-i18n="booking.required">*</span>
+                  <span data-i18n="booking.email">Adresse e-mail</span> <span data-i18n="booking.required" class="text-red-500">*</span>
                 </label>
                 <input 
                   type="email" 
                   id="email" 
                   name="email" 
                   required 
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 outline-none transition-all"
+                  class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 outline-none transition-all text-sm sm:text-base"
                   data-i18n="booking.emailPlaceholder"
                   placeholder="votre@email.com"
                 />
@@ -85,13 +86,13 @@
 
             <div>
               <label for="tickets" class="block text-sm font-semibold text-gray-700 mb-2">
-                <span data-i18n="booking.ticketCount">Nombre de billets</span> <span data-i18n="booking.required">*</span>
+                <span data-i18n="booking.ticketCount">Nombre de billets</span> <span data-i18n="booking.required" class="text-red-500">*</span>
               </label>
               <select 
                 id="tickets" 
                 name="tickets" 
                 required 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 outline-none transition-all"
+                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 outline-none transition-all text-sm sm:text-base"
               >
                 <option value="" data-i18n="booking.selectTickets">Sélectionnez le nombre de billets</option>
                 <option value="1">1 billet - 15 $</option>
@@ -102,21 +103,21 @@
             </div>
 
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-4">
-                <span data-i18n="booking.paymentMethod">Méthode de paiement</span> <span data-i18n="booking.required">*</span>
+              <label class="block text-sm font-semibold text-gray-700 mb-3 sm:mb-4">
+                <span data-i18n="booking.paymentMethod">Méthode de paiement</span> <span data-i18n="booking.required" class="text-red-500">*</span>
               </label>
-              <div class="grid md:grid-cols-3 gap-4">
-                <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 transition-colors">
-                  <input type="radio" name="payment" value="mobile" class="mr-3 text-primary-600" />
-                  <span class="font-medium" data-i18n="booking.mobilePayment">Mobile Money</span>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <label class="flex items-center p-3 sm:p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 transition-colors">
+                  <input type="radio" name="payment" value="mobile" class="mr-2 sm:mr-3 text-primary-600" />
+                  <span class="font-medium text-sm sm:text-base" data-i18n="booking.mobilePayment">Mobile Money</span>
                 </label>
-                <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 transition-colors">
-                  <input type="radio" name="payment" value="card" class="mr-3 text-primary-600" />
-                  <span class="font-medium" data-i18n="booking.cardPayment">Carte bancaire</span>
+                <label class="flex items-center p-3 sm:p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 transition-colors">
+                  <input type="radio" name="payment" value="card" class="mr-2 sm:mr-3 text-primary-600" />
+                  <span class="font-medium text-sm sm:text-base" data-i18n="booking.cardPayment">Carte bancaire</span>
                 </label>
-                <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 transition-colors">
-                  <input type="radio" name="payment" value="cash" class="mr-3 text-primary-600" />
-                  <span class="font-medium" data-i18n="booking.cashPayment">Espèces sur place</span>
+                <label class="flex items-center p-3 sm:p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 transition-colors">
+                  <input type="radio" name="payment" value="cash" class="mr-2 sm:mr-3 text-primary-600" />
+                  <span class="font-medium text-sm sm:text-base" data-i18n="booking.cashPayment">Espèces sur place</span>
                 </label>
               </div>
             </div>
@@ -129,17 +130,17 @@
                 id="message" 
                 name="message" 
                 rows="4" 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 outline-none transition-all resize-none"
+                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 outline-none transition-all resize-none text-sm sm:text-base"
                 data-i18n="booking.messagePlaceholder"
                 placeholder="Avez-vous des questions ou des demandes particulières ?"
               ></textarea>
             </div>
 
-            <div class="bg-gray-50 rounded-lg p-4">
-              <p class="text-sm text-gray-600 mb-2" data-i18n="booking.confirmationInfo">
+            <div class="bg-gray-50 rounded-lg p-3 sm:p-4">
+              <p class="text-xs sm:text-sm text-gray-600 mb-2" data-i18n="booking.confirmationInfo">
                 📬 Une confirmation vous sera envoyée par e-mail après votre réservation.
               </p>
-              <p class="text-sm text-gray-600">
+              <p class="text-xs sm:text-sm text-gray-600">
                 <span data-i18n="booking.contactInfo">Pour toute question, contactez-moi à :</span> 
                 <a href="mailto:contact@valentinonguelieu.com" class="text-primary-600 hover:text-primary-700 font-semibold">contact@valentinonguelieu.com</a>
               </p>
@@ -147,7 +148,7 @@
 
             <button 
               type="submit" 
-              class="w-full bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              class="w-full bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               data-i18n="booking.reserveButton"
             >
               ✅ RÉSERVER MA PLACE
@@ -157,20 +158,20 @@
       </div>
 
       <!-- Other Events Quick Links -->
-      <div class="mt-16 animate-on-scroll">
-        <h3 class="text-xl font-bold text-center text-gray-900 mb-8" data-i18n="booking.otherEvents">Autres événements</h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-colors">
-            <h4 class="font-bold text-gray-900 mb-2" data-i18n="booking.privateShowcase">Showcase privé - Fredericton</h4>
-            <p class="text-gray-600 mb-4">10 décembre 2025 • 25 $ / personne</p>
-            <button class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-full font-semibold transition-colors" data-i18n="booking.reserve">
+      <div class="mt-12 sm:mt-16 animate-on-scroll">
+        <h3 class="text-lg sm:text-xl font-bold text-center text-gray-900 mb-6 sm:mb-8" data-i18n="booking.otherEvents">Autres événements</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div class="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:bg-gray-100 transition-colors">
+            <h4 class="font-bold text-gray-900 mb-2 text-sm sm:text-base" data-i18n="booking.privateShowcase">Showcase privé - Fredericton</h4>
+            <p class="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm">10 décembre 2025 • 25 $ / personne</p>
+            <button class="bg-primary-600 hover:bg-primary-700 text-white px-4 sm:px-6 py-2 rounded-full font-semibold transition-colors text-sm sm:text-base" data-i18n="booking.reserve">
               Réserver
             </button>
           </div>
-          <div class="bg-gray-50 rounded-xl p-6 text-center">
-            <h4 class="font-bold text-gray-900 mb-2" data-i18n="booking.monctonShow">Première partie - Moncton</h4>
-            <p class="text-gray-600 mb-4">15 septembre 2025 • À confirmer</p>
-            <button disabled class="bg-gray-300 text-gray-500 px-6 py-2 rounded-full font-semibold cursor-not-allowed" data-i18n="booking.comingSoon">
+          <div class="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center">
+            <h4 class="font-bold text-gray-900 mb-2 text-sm sm:text-base" data-i18n="booking.monctonShow">Première partie - Moncton</h4>
+            <p class="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm">15 septembre 2025 • À confirmer</p>
+            <button disabled class="bg-gray-300 text-gray-500 px-4 sm:px-6 py-2 rounded-full font-semibold cursor-not-allowed text-sm sm:text-base" data-i18n="booking.comingSoon">
               À venir
             </button>
           </div>
@@ -179,3 +180,95 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* Form improvements */
+  input, select, textarea {
+    transition: all 0.2s ease;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  }
+
+  /* Radio button styling */
+  input[type="radio"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  /* Better touch targets for mobile */
+  @media (max-width: 640px) {
+    label {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    
+    button {
+      min-height: 48px;
+    }
+    
+    input, select, textarea {
+      min-height: 44px;
+    }
+  }
+
+  /* Grid improvements */
+  .grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .grid {
+      gap: 1.5rem;
+    }
+  }
+
+  /* Responsive form layout */
+  @media (max-width: 768px) {
+    .md\:grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .sm\:grid-cols-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Landscape mobile adjustments */
+  @media (max-height: 600px) {
+    .py-12 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    .py-16 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+    
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+  }
+
+  /* Ensure consistent spacing */
+  .container {
+    max-width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+</style>
