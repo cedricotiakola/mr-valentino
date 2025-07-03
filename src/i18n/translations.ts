@@ -75,7 +75,41 @@ export const translations = {
       dontMiss: 'Ne manquez rien !',
       subscribeDescription: 'Abonnez-vous à ma chaîne YouTube pour être notifié de toutes mes nouvelles vidéos, performances live et contenus exclusifs.',
       subscribeYoutube: 'S\'abonner sur YouTube',
-      watchAll: 'Voir toutes les vidéos'
+      watchAll: 'Voir toutes les vidéos',
+      realVideos: {
+        jeTaimeEncore: {
+          title: 'JE T\'AIME ENCORE – Carlos K (Mr Valentino)',
+          description: 'Clip studio officiel de ma nouvelle chanson "Je t\'aime encore". Une création originale qui marque le début de 2025 avec émotion et authenticité.'
+        },
+        jeTaimeEncoreLive: {
+          title: 'JE T\'AIME ENCORE – Valentino (Live)',
+          description: 'Version live de ma chanson "Je t\'aime encore". L\'émotion brute d\'une performance acoustique intimiste.'
+        },
+        alineLive: {
+          title: 'ALINE – Valentino (Live)',
+          description: 'Ma reprise live du classique "Aline" de Christophe. Une interprétation personnelle et émouvante.'
+        },
+        elvisShow: {
+          title: 'Elvis se réincarne en 2025',
+          description: 'Performance de rue à la Elvis - Réactions du public'
+        },
+        jeTaimeLive: {
+          title: 'JE T\'AIME – Valentino (Live)',
+          description: 'Interprétation live d\'une chanson romantique'
+        },
+        jeLaimeMourir: {
+          title: 'Je l\'aime à mourir – Francis Cabrel',
+          description: 'Reprise live touchante du classique de Cabrel'
+        },
+        spectacleNoel: {
+          title: 'Spectacle de Noël improvisé',
+          description: 'Flashmob musical - Complexe Desjardins, Montréal'
+        },
+        formidable: {
+          title: 'FORMIDABLE – Valentino (Live)',
+          description: 'Reprise live de "Formidable" (Stromae)'
+        }
+      }
     },
     
     // News Section
@@ -296,7 +330,41 @@ export const translations = {
       dontMiss: 'Don\'t miss anything!',
       subscribeDescription: 'Subscribe to my YouTube channel to be notified of all my new videos, live performances and exclusive content.',
       subscribeYoutube: 'Subscribe on YouTube',
-      watchAll: 'Watch all videos'
+      watchAll: 'Watch all videos',
+      realVideos: {
+        jeTaimeEncore: {
+          title: 'JE T\'AIME ENCORE – Carlos K (Mr Valentino)',
+          description: 'Official studio clip of my new song "Je t\'aime encore". An original creation that marks the beginning of 2025 with emotion and authenticity.'
+        },
+        jeTaimeEncoreLive: {
+          title: 'JE T\'AIME ENCORE – Valentino (Live)',
+          description: 'Live version of my song "Je t\'aime encore". The raw emotion of an intimate acoustic performance.'
+        },
+        alineLive: {
+          title: 'ALINE – Valentino (Live)',
+          description: 'My live cover of the classic "Aline" by Christophe. A personal and moving interpretation.'
+        },
+        elvisShow: {
+          title: 'Elvis reincarnated in 2025',
+          description: 'Street performance Elvis-style - Public reactions'
+        },
+        jeTaimeLive: {
+          title: 'JE T\'AIME – Valentino (Live)',
+          description: 'Live interpretation of a romantic song'
+        },
+        jeLaimeMourir: {
+          title: 'Je l\'aime à mourir – Francis Cabrel',
+          description: 'Touching live cover of Cabrel\'s classic'
+        },
+        spectacleNoel: {
+          title: 'Improvised Christmas show',
+          description: 'Musical flashmob - Complexe Desjardins, Montreal'
+        },
+        formidable: {
+          title: 'FORMIDABLE – Valentino (Live)',
+          description: 'Live cover of "Formidable" (Stromae)'
+        }
+      }
     },
     
     // News Section
