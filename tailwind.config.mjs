@@ -229,36 +229,40 @@ export default {
         '.pr-safe': {
           paddingRight: 'env(safe-area-inset-right)',
         },
-        // Responsive text utilities
+        // Text wrapping utilities
+        '.text-no-wrap': {
+          whiteSpace: 'nowrap',
+        },
+        '.text-wrap': {
+          whiteSpace: 'normal',
+        },
+        // Responsive text utilities with better scaling
         '.text-responsive-xs': {
-          fontSize: '0.75rem',
-          '@media (min-width: 640px)': {
-            fontSize: '0.875rem',
-          },
+          fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
         },
         '.text-responsive-sm': {
-          fontSize: '0.875rem',
-          '@media (min-width: 640px)': {
-            fontSize: '1rem',
-          },
+          fontSize: 'clamp(0.875rem, 2.5vw, 1rem)',
         },
         '.text-responsive-base': {
-          fontSize: '1rem',
-          '@media (min-width: 640px)': {
-            fontSize: '1.125rem',
-          },
+          fontSize: 'clamp(1rem, 3vw, 1.125rem)',
         },
         '.text-responsive-lg': {
-          fontSize: '1.125rem',
-          '@media (min-width: 640px)': {
-            fontSize: '1.25rem',
-          },
+          fontSize: 'clamp(1.125rem, 3.5vw, 1.25rem)',
         },
         '.text-responsive-xl': {
-          fontSize: '1.25rem',
-          '@media (min-width: 640px)': {
-            fontSize: '1.5rem',
-          },
+          fontSize: 'clamp(1.25rem, 4vw, 1.5rem)',
+        },
+        '.text-responsive-2xl': {
+          fontSize: 'clamp(1.5rem, 4.5vw, 2rem)',
+        },
+        '.text-responsive-3xl': {
+          fontSize: 'clamp(1.875rem, 5vw, 2.25rem)',
+        },
+        '.text-responsive-4xl': {
+          fontSize: 'clamp(2.25rem, 6vw, 3rem)',
+        },
+        '.text-responsive-5xl': {
+          fontSize: 'clamp(3rem, 7vw, 4rem)',
         },
         // Responsive spacing utilities
         '.space-responsive': {
@@ -270,6 +274,15 @@ export default {
             '@media (min-width: 1024px)': {
               marginTop: '2rem',
             },
+          },
+        },
+        // Better mobile padding
+        '.px-mobile': {
+          paddingLeft: '0.5rem',
+          paddingRight: '0.5rem',
+          '@media (min-width: 640px)': {
+            paddingLeft: '1rem',
+            paddingRight: '1rem',
           },
         },
       }

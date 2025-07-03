@@ -58,7 +58,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
           </div>
         </div>
         
-        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none animate-fade-in tracking-tight">
+        <h1 class="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none animate-fade-in tracking-tight whitespace-nowrap">
           <span data-i18n="hero.title" class="bg-gradient-to-r from-white via-accent-200 to-white bg-clip-text text-transparent drop-shadow-2xl">Mr Valentino</span>
         </h1>
         
@@ -69,16 +69,16 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
         </div>
       </div>
       
-      <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-blue-100 font-light animate-slide-up leading-relaxed tracking-wide px-4" data-i18n="hero.subtitle">
-        La voix du cœur. L'émotion sans filtre.
+      <p class="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl text-blue-100 font-light animate-slide-up leading-relaxed tracking-wide px-2">
+        <span data-i18n="hero.subtitle" class="whitespace-nowrap">La voix du cœur. L'émotion sans filtre.</span>
       </p>
       
-      <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-200 max-w-4xl mx-auto animate-slide-up leading-relaxed px-4" style="animation-delay: 0.2s;" data-i18n="hero.description">
+      <p class="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-blue-200 max-w-4xl mx-auto animate-slide-up leading-relaxed px-2" style="animation-delay: 0.2s;" data-i18n="hero.description">
         Chanteur franco-camerounais, passionné par la musique qui émeut et rassemble.
       </p>
 
       <!-- Enhanced Achievement Badges -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-10 mt-12 sm:mt-16 animate-slide-up px-4" style="animation-delay: 0.4s;">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-10 mt-12 sm:mt-16 animate-slide-up px-2" style="animation-delay: 0.4s;">
         <div class="group bg-white/15 backdrop-blur-xl rounded-2xl sm:rounded-3xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border border-white/30 hover:bg-white/25 transition-all duration-500 hover:scale-110 shadow-2xl hover:shadow-accent/20 w-full sm:w-auto">
           <div class="flex items-center space-x-3 sm:space-x-4">
             <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-accent-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl">
@@ -86,7 +86,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
             </div>
             <div class="text-left">
               <div class="text-accent-300 font-bold text-base sm:text-lg">2024</div>
-              <div class="text-white text-sm sm:text-base lg:text-lg font-semibold" data-i18n="hero.ccnbWinner">Vainqueur CCNB sur scène</div>
+              <div class="text-white text-sm sm:text-base lg:text-lg font-semibold whitespace-nowrap" data-i18n="hero.ccnbWinner">Vainqueur CCNB sur scène</div>
             </div>
           </div>
         </div>
@@ -98,21 +98,21 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
             </div>
             <div class="text-left">
               <div class="text-soul-300 font-bold text-base sm:text-lg">2024</div>
-              <div class="text-white text-sm sm:text-base lg:text-lg font-semibold" data-i18n="hero.publicChoice">Coup de cœur du public - Caraquet</div>
+              <div class="text-white text-sm sm:text-base lg:text-lg font-semibold whitespace-nowrap" data-i18n="hero.publicChoice">Coup de cœur du public - Caraquet</div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Enhanced Call to Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 mt-16 sm:mt-20 animate-slide-up px-4" style="animation-delay: 0.6s;">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 mt-16 sm:mt-20 animate-slide-up px-2" style="animation-delay: 0.6s;">
         <a 
           href="#music" 
           class="group relative bg-gradient-to-r from-accent-500 via-accent-600 to-accent-700 hover:from-accent-600 hover:via-accent-700 hover:to-accent-800 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-accent/40 flex items-center overflow-hidden w-full sm:w-auto justify-center"
         >
           <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
           <span class="relative mr-3 sm:mr-4 text-xl sm:text-2xl">🎧</span>
-          <span class="relative tracking-wide" data-i18n="hero.listenMusic">Écouter ma musique</span>
+          <span class="relative tracking-wide whitespace-nowrap" data-i18n="hero.listenMusic">Écouter ma musique</span>
           <svg class="relative w-5 h-5 sm:w-6 sm:h-6 ml-3 sm:ml-4 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
@@ -124,26 +124,26 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
         >
           <div class="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></div>
           <span class="relative mr-3 sm:mr-4 text-xl sm:text-2xl">🎤</span>
-          <span class="relative tracking-wide" data-i18n="hero.watchPerformances">Voir mes événements</span>
+          <span class="relative tracking-wide whitespace-nowrap" data-i18n="hero.watchPerformances">Voir mes événements</span>
         </a>
       </div>
 
       <!-- Enhanced Social Proof -->
-      <div class="mt-16 sm:mt-20 animate-slide-up px-4" style="animation-delay: 0.8s;">
+      <div class="mt-16 sm:mt-20 animate-slide-up px-2" style="animation-delay: 0.8s;">
         <div class="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-8 lg:space-x-12 text-white/80">
           <div class="text-center group hover:scale-110 transition-transform duration-300">
             <div class="text-2xl sm:text-3xl font-black text-accent-400 mb-2">2024</div>
-            <div class="text-xs sm:text-sm font-medium tracking-wide">Année de consécration</div>
+            <div class="text-xs sm:text-sm font-medium tracking-wide whitespace-nowrap">Année de consécration</div>
           </div>
           <div class="w-16 h-px sm:w-px sm:h-16 bg-white/40"></div>
           <div class="text-center group hover:scale-110 transition-transform duration-300">
             <div class="text-2xl sm:text-3xl font-black text-soul-400 mb-2">2</div>
-            <div class="text-xs sm:text-sm font-medium tracking-wide">Prix remportés</div>
+            <div class="text-xs sm:text-sm font-medium tracking-wide whitespace-nowrap">Prix remportés</div>
           </div>
           <div class="w-16 h-px sm:w-px sm:h-16 bg-white/40"></div>
           <div class="text-center group hover:scale-110 transition-transform duration-300">
             <div class="text-2xl sm:text-3xl font-black text-primary-400 mb-2">∞</div>
-            <div class="text-xs sm:text-sm font-medium tracking-wide">Émotions partagées</div>
+            <div class="text-xs sm:text-sm font-medium tracking-wide whitespace-nowrap">Émotions partagées</div>
           </div>
         </div>
       </div>
@@ -174,11 +174,33 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   }
 
+  /* Force text to stay on one line */
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+
   /* Responsive adjustments */
   @media (max-width: 640px) {
     .container {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    
+    /* Ensure title fits on one line on very small screens */
+    h1 {
+      font-size: clamp(2rem, 8vw, 4rem);
+    }
+  }
+
+  @media (max-width: 475px) {
+    h1 {
+      font-size: clamp(1.75rem, 7vw, 3rem);
+    }
+    
+    /* Reduce padding on very small screens */
+    .px-2 {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
     }
   }
 
@@ -205,6 +227,21 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
   @media (max-height: 500px) {
     .animate-bounce {
       display: none;
+    }
+  }
+
+  /* Ensure proper text scaling */
+  @media (min-width: 475px) {
+    .xs\:text-5xl {
+      font-size: 3rem;
+    }
+    
+    .xs\:text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .xs\:text-base {
+      font-size: 1rem;
     }
   }
 </style>
