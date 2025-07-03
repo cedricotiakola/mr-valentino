@@ -17,7 +17,7 @@ export const translations = {
       subtitle: 'La voix du cœur. L\'émotion sans filtre.',
       description: 'Chanteur franco-camerounais, passionné par la musique qui émeut et rassemble.',
       listenMusic: 'Écouter ma musique',
-      watchPerformances: 'Regarder mes performances',
+      watchPerformances: 'Voir mes événements',
       ccnbWinner: 'Vainqueur CCNB sur scène 2024',
       publicChoice: 'Coup de cœur du public - Caraquet 2024'
     },
@@ -26,7 +26,7 @@ export const translations = {
     about: {
       title: 'Une voix, un parcours,',
       titleAccent: 'une mission',
-      intro: 'Je m\'appelle Valentino Nguelieu, artiste interprète originaire du Cameroun, actuellement basé au Nouveau-Brunswick, au Canada.',
+      intro: 'Je m\'appelle Mr Valentino (Valentino Nguelieu), artiste interprète originaire du Cameroun, actuellement basé au Nouveau-Brunswick, au Canada.',
       passion: 'Depuis tout petit, la musique a été pour moi plus qu\'une passion — c\'est un moyen d\'expression, une thérapie, un langage universel.',
       achievements: 'En 2024, j\'ai eu l\'honneur de remporter le concours CCNB sur scène, puis d\'être sacré Coup de cœur du public au Gala de la chanson de Caraquet.',
       style: 'J\'interprète principalement des chansons francophones aux influences blues, soul, et variétés. Mon univers est émotionnel, vibrant, sincère.',
@@ -178,9 +178,12 @@ export const translations = {
     
     // Footer
     footer: {
+      brandName: 'Mr Valentino',
       description: 'Chanteur franco-camerounais passionné par la musique qui émeut et rassemble. La voix du cœur, l\'émotion sans filtre.',
       navigation: 'Navigation',
       contact: 'Contact',
+      whatsappContact: 'WhatsApp: +1 (438) 699-0334',
+      location: 'Edmundston, NB, Canada',
       recentAwards: 'Récompenses récentes',
       ccnbAward: 'CCNB sur scène 2024',
       caraquetAward: 'Coup de cœur du public - Caraquet 2024',
@@ -219,7 +222,7 @@ export const translations = {
       subtitle: 'The voice of the heart. Unfiltered emotion.',
       description: 'Franco-Cameroonian singer, passionate about music that moves and brings people together.',
       listenMusic: 'Listen to my music',
-      watchPerformances: 'Watch my performances',
+      watchPerformances: 'See my events',
       ccnbWinner: 'CCNB on stage 2024 Winner',
       publicChoice: 'Audience favorite - Caraquet 2024'
     },
@@ -228,7 +231,7 @@ export const translations = {
     about: {
       title: 'One voice, one journey,',
       titleAccent: 'one mission',
-      intro: 'My name is Valentino Nguelieu, performing artist from Cameroon, currently based in New Brunswick, Canada.',
+      intro: 'My name is Mr Valentino (Valentino Nguelieu), performing artist from Cameroon, currently based in New Brunswick, Canada.',
       passion: 'Since childhood, music has been more than a passion for me — it\'s a means of expression, therapy, a universal language.',
       achievements: 'In 2024, I had the honor of winning the CCNB on stage competition, then being crowned Audience favorite at the Caraquet Song Gala.',
       style: 'I mainly perform French songs with blues, soul, and variety influences. My universe is emotional, vibrant, sincere.',
@@ -380,9 +383,12 @@ export const translations = {
     
     // Footer
     footer: {
+      brandName: 'Mr Valentino',
       description: 'Franco-Cameroonian singer passionate about music that moves and brings people together. The voice of the heart, unfiltered emotion.',
       navigation: 'Navigation',
       contact: 'Contact',
+      whatsappContact: 'WhatsApp: +1 (438) 699-0334',
+      location: 'Edmundston, NB, Canada',
       recentAwards: 'Recent awards',
       ccnbAward: 'CCNB on stage 2024',
       caraquetAward: 'Audience favorite - Caraquet 2024',
