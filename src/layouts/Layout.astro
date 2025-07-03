@@ -15,6 +15,7 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
     <title>{title}</title>
     
     <!-- Enhanced Font Loading -->
@@ -32,7 +33,7 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
       }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-900 font-sans antialiased">
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
     <slot />
   </body>
 </html>
@@ -71,6 +72,10 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
     background: #f1f5f9;
   }
   
+  .dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
+  
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(135deg, #6366f1, #d946ef);
     border-radius: 4px;
@@ -86,11 +91,20 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
     color: #312e81;
   }
   
+  .dark ::selection {
+    background: rgba(99, 102, 241, 0.4);
+    color: #e0e7ff;
+  }
+  
   /* Focus styles */
   *:focus-visible {
     outline: 2px solid #6366f1;
     outline-offset: 2px;
     border-radius: 4px;
+  }
+  
+  .dark *:focus-visible {
+    outline-color: #818cf8;
   }
   
   /* Smooth transitions for all interactive elements */
@@ -118,6 +132,135 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
   
   .btn-primary:hover::before {
     left: 100%;
+  }
+  
+  /* Dark mode specific styles */
+  .dark {
+    color-scheme: dark;
+  }
+  
+  /* Improved contrast for dark mode */
+  .dark .bg-white {
+    background-color: #1f2937 !important;
+  }
+  
+  .dark .bg-gray-50 {
+    background-color: #111827 !important;
+  }
+  
+  .dark .bg-gray-100 {
+    background-color: #1f2937 !important;
+  }
+  
+  .dark .text-gray-900 {
+    color: #f9fafb !important;
+  }
+  
+  .dark .text-gray-800 {
+    color: #e5e7eb !important;
+  }
+  
+  .dark .text-gray-700 {
+    color: #d1d5db !important;
+  }
+  
+  .dark .text-gray-600 {
+    color: #9ca3af !important;
+  }
+  
+  .dark .text-gray-500 {
+    color: #6b7280 !important;
+  }
+  
+  .dark .border-gray-200 {
+    border-color: #374151 !important;
+  }
+  
+  .dark .border-gray-300 {
+    border-color: #4b5563 !important;
+  }
+  
+  .dark .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .dark .shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .dark .shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  /* Dark mode gradients */
+  .dark .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, #111827, #1f2937, #111827) !important;
+  }
+  
+  .dark .bg-gradient-to-r.from-gray-50 {
+    background-image: linear-gradient(to right, #111827, #1f2937, #111827) !important;
+  }
+  
+  /* Hero section dark mode */
+  .dark #home {
+    background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%) !important;
+  }
+  
+  /* Form elements dark mode */
+  .dark input,
+  .dark textarea,
+  .dark select {
+    background-color: #374151 !important;
+    border-color: #4b5563 !important;
+    color: #f9fafb !important;
+  }
+  
+  .dark input:focus,
+  .dark textarea:focus,
+  .dark select:focus {
+    border-color: #6366f1 !important;
+    background-color: #4b5563 !important;
+  }
+  
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #9ca3af !important;
+  }
+  
+  /* Card backgrounds in dark mode */
+  .dark .bg-white {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+  }
+  
+  /* Ensure proper contrast for all text elements */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #f9fafb !important;
+  }
+  
+  .dark p {
+    color: #d1d5db !important;
+  }
+  
+  /* Button adjustments for dark mode */
+  .dark .bg-primary-600 {
+    background-color: #6366f1 !important;
+  }
+  
+  .dark .hover\:bg-primary-700:hover {
+    background-color: #4f46e5 !important;
+  }
+  
+  /* Special handling for gradient text */
+  .dark .bg-gradient-to-r.from-gray-900.via-primary-700.to-gray-900 {
+    background-image: linear-gradient(to right, #f9fafb, #818cf8, #f9fafb) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+  
+  /* Video modal dark mode */
+  .dark #video-modal .bg-white {
+    background-color: #1f2937 !important;
   }
 </style>
 

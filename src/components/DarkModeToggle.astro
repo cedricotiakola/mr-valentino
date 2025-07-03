@@ -1,0 +1,271 @@
+---
+---
+
+<div class="dark-mode-toggle">
+  <button id="theme-toggle" class="theme-btn" aria-label="Basculer le mode sombre">
+    <div class="theme-icon-container">
+      <!-- Sun Icon -->
+      <svg class="sun-icon theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+      </svg>
+      
+      <!-- Moon Icon -->
+      <svg class="moon-icon theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+      </svg>
+    </div>
+    
+    <span class="theme-text">
+      <span class="light-text">Mode sombre</span>
+      <span class="dark-text">Mode clair</span>
+    </span>
+  </button>
+</div>
+
+<style>
+  .dark-mode-toggle {
+    position: relative;
+  }
+
+  .theme-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .theme-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #6366f1, #d946ef);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+  }
+
+  .theme-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+
+  .theme-btn:hover::before {
+    opacity: 0.1;
+  }
+
+  .theme-icon-container {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  .theme-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  .moon-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.8);
+  }
+
+  .theme-text {
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+  }
+
+  .light-text,
+  .dark-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+  }
+
+  .light-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .dark-text {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  /* Dark mode styles */
+  :global(.dark) .theme-btn {
+    background: rgba(17, 24, 39, 0.95);
+    color: #d1d5db;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  :global(.dark) .theme-btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  :global(.dark) .sun-icon {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.8);
+  }
+
+  :global(.dark) .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  :global(.dark) .light-text {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  :global(.dark) .dark-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .theme-btn {
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+    
+    .theme-text {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  class ThemeManager {
+    private currentTheme: 'light' | 'dark' = 'light';
+    
+    constructor() {
+      this.init();
+    }
+    
+    private init() {
+      this.currentTheme = this.getInitialTheme();
+      this.applyTheme(this.currentTheme);
+      this.bindEvents();
+    }
+    
+    private getInitialTheme(): 'light' | 'dark' {
+      if (typeof window !== 'undefined') {
+        const stored = localStorage.getItem('theme') as 'light' | 'dark';
+        if (stored && ['light', 'dark'].includes(stored)) {
+          return stored;
+        }
+        
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+      }
+      return 'light';
+    }
+    
+    private bindEvents() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      toggleBtn?.addEventListener('click', () => {
+        this.toggleTheme();
+      });
+      
+      // Listen for system theme changes
+      if (typeof window !== 'undefined' && window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            this.setTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      }
+    }
+    
+    private toggleTheme() {
+      const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+      this.setTheme(newTheme);
+    }
+    
+    private setTheme(theme: 'light' | 'dark') {
+      this.currentTheme = theme;
+      localStorage.setItem('theme', theme);
+      this.applyTheme(theme);
+      this.showThemeChangeEffect();
+    }
+    
+    private applyTheme(theme: 'light' | 'dark') {
+      const html = document.documentElement;
+      
+      if (theme === 'dark') {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
+      
+      // Update meta theme-color for mobile browsers
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', theme === 'dark' ? '#111827' : '#ffffff');
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'theme-color';
+        meta.content = theme === 'dark' ? '#111827' : '#ffffff';
+        document.head.appendChild(meta);
+      }
+    }
+    
+    private showThemeChangeEffect() {
+      const body = document.body;
+      body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+      
+      // Add a subtle flash effect
+      const flash = document.createElement('div');
+      flash.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: ${this.currentTheme === 'dark' ? '#000' : '#fff'};
+        opacity: 0.1;
+        pointer-events: none;
+        z-index: 9999;
+        transition: opacity 0.2s ease;
+      `;
+      
+      document.body.appendChild(flash);
+      
+      setTimeout(() => {
+        flash.style.opacity = '0';
+        setTimeout(() => {
+          document.body.removeChild(flash);
+        }, 200);
+      }, 50);
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    new ThemeManager();
+  });
+</script>

@@ -21,6 +21,13 @@
     padding: 4px;
     border: 1px solid rgba(99, 102, 241, 0.2);
     box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  :global(.dark) .language-switcher {
+    background: rgba(17, 24, 39, 0.95);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
   .lang-btn {
@@ -40,6 +47,10 @@
     overflow: hidden;
   }
 
+  :global(.dark) .lang-btn {
+    color: #9ca3af;
+  }
+
   .lang-btn::before {
     content: '';
     position: absolute;
@@ -54,6 +65,11 @@
     color: #374151;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+  }
+
+  :global(.dark) .lang-btn:hover {
+    color: #f3f4f6;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
   }
 
   .lang-btn:hover::before {
@@ -86,6 +102,11 @@
     .language-switcher {
       background: rgba(0, 0, 0, 0.8);
       border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    :global(.dark) .language-switcher {
+      background: rgba(17, 24, 39, 0.9);
+      border-color: rgba(255, 255, 255, 0.3);
     }
     
     .lang-btn {

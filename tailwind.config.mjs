@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -136,6 +137,7 @@ export default {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-brand': 'linear-gradient(135deg, #6366f1 0%, #d946ef 50%, #eab308 100%)',
         'gradient-hero': 'linear-gradient(135deg, #312e81 0%, #4338ca 25%, #6366f1 50%, #d946ef 75%, #eab308 100%)',
+        'gradient-hero-dark': 'linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%)',
         'gradient-music': 'linear-gradient(45deg, #6366f1 0%, #d946ef 100%)',
         'gradient-soul': 'linear-gradient(135deg, #d946ef 0%, #6366f1 100%)',
       },
@@ -149,6 +151,8 @@ export default {
         'accent': '0 20px 60px rgba(234, 179, 8, 0.25)',
         'glow': '0 0 30px rgba(99, 102, 241, 0.5)',
         'glow-lg': '0 0 50px rgba(99, 102, 241, 0.7)',
+        'dark': '0 20px 60px rgba(0, 0, 0, 0.3)',
+        'dark-lg': '0 30px 80px rgba(0, 0, 0, 0.4)',
       },
       borderRadius: {
         '4xl': '2rem',

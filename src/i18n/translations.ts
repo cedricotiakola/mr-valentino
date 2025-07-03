@@ -251,6 +251,12 @@ export const translations = {
       limitedSeats: 'Places limitées',
       email: 'E-mail',
       required: '*'
+    },
+    
+    // Theme
+    theme: {
+      darkMode: 'Mode sombre',
+      lightMode: 'Mode clair'
     }
   },
   
@@ -506,6 +512,12 @@ export const translations = {
       limitedSeats: 'Limited seats',
       email: 'Email',
       required: '*'
+    },
+    
+    // Theme
+    theme: {
+      darkMode: 'Dark mode',
+      lightMode: 'Light mode'
     }
   }
 };
