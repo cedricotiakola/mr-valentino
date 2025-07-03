@@ -5,6 +5,7 @@ export const translations = {
       home: 'Accueil',
       about: 'À propos',
       music: 'Musique',
+      videos: 'Vidéos',
       news: 'Actualités',
       events: 'Événements',
       booking: 'Réservation',
@@ -60,6 +61,21 @@ export const translations = {
         ccnb: 'La performance qui m\'a valu la victoire au concours CCNB sur scène 2024.',
         caraquet: 'Ma performance finale qui m\'a valu le coup de cœur du public.'
       }
+    },
+    
+    // Videos Section
+    videos: {
+      title: 'Mes performances',
+      titleAccent: 'en vidéo',
+      description: 'Découvrez mes performances live, mes reprises et mes moments musicaux les plus marquants sur ma chaîne YouTube officielle.',
+      channelDescription: 'Chaîne YouTube officielle de Mr Valentino',
+      channelIntro: 'Abonnez-vous pour ne manquer aucune de mes nouvelles performances, reprises et moments musicaux exclusifs !',
+      subscribeButton: 'S\'abonner à la chaîne',
+      moreVideos: 'Plus de vidéos',
+      dontMiss: 'Ne manquez rien !',
+      subscribeDescription: 'Abonnez-vous à ma chaîne YouTube pour être notifié de toutes mes nouvelles vidéos, performances live et contenus exclusifs.',
+      subscribeYoutube: 'S\'abonner sur YouTube',
+      watchAll: 'Voir toutes les vidéos'
     },
     
     // News Section
@@ -210,6 +226,7 @@ export const translations = {
       home: 'Home',
       about: 'About',
       music: 'Music',
+      videos: 'Videos',
       news: 'News',
       events: 'Events',
       booking: 'Booking',
@@ -265,6 +282,21 @@ export const translations = {
         ccnb: 'The performance that earned me victory in the CCNB on stage 2024 competition.',
         caraquet: 'My final performance that earned me the audience favorite.'
       }
+    },
+    
+    // Videos Section
+    videos: {
+      title: 'My performances',
+      titleAccent: 'on video',
+      description: 'Discover my live performances, covers and most memorable musical moments on my official YouTube channel.',
+      channelDescription: 'Mr Valentino\'s official YouTube channel',
+      channelIntro: 'Subscribe to not miss any of my new performances, covers and exclusive musical moments!',
+      subscribeButton: 'Subscribe to the channel',
+      moreVideos: 'More videos',
+      dontMiss: 'Don\'t miss anything!',
+      subscribeDescription: 'Subscribe to my YouTube channel to be notified of all my new videos, live performances and exclusive content.',
+      subscribeYoutube: 'Subscribe on YouTube',
+      watchAll: 'Watch all videos'
     },
     
     // News Section
