@@ -37,13 +37,13 @@ import DarkModeToggle from './DarkModeToggle.astro';
       </div>
 
       <!-- Controls: Language Switcher, Dark Mode & Mobile Menu Button -->
-      <div class="flex items-center space-x-2 sm:space-x-4">
-        <div class="hidden md:flex items-center space-x-3 lg:space-x-4">
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <div class="hidden md:flex items-center space-x-3">
           <LanguageSwitcher />
           <DarkModeToggle />
         </div>
         
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-200">
+        <button id="mobile-menu-btn" class="lg:hidden p-2.5 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-200 border border-gray-200/50 dark:border-gray-700/50 hover:border-primary-200 dark:hover:border-gray-600">
           <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -51,7 +51,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
       </div>
     </div>
 
-    <!-- Mobile Navigation -->
+    <!-- Enhanced Mobile Navigation -->
     <div id="mobile-menu" class="hidden lg:hidden mt-4 pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
       <div class="flex flex-col space-y-2 sm:space-y-3">
         <a href="#home" class="nav-link-mobile" data-i18n="nav.home">Accueil</a>
@@ -64,8 +64,14 @@ import DarkModeToggle from './DarkModeToggle.astro';
         
         <!-- Mobile Controls -->
         <div class="pt-4 border-t border-gray-200/50 dark:border-gray-700/50 flex flex-col space-y-4 md:hidden">
-          <LanguageSwitcher />
-          <DarkModeToggle />
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Langue</span>
+            <LanguageSwitcher />
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Thème</span>
+            <DarkModeToggle />
+          </div>
         </div>
       </div>
     </div>
@@ -105,17 +111,17 @@ import DarkModeToggle from './DarkModeToggle.astro';
   }
   
   .nav-link-mobile {
-    @apply text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all duration-300 py-2 px-3 rounded-xl hover:bg-primary-50 dark:hover:bg-gray-800;
+    @apply text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all duration-300 py-3 px-4 rounded-xl hover:bg-primary-50 dark:hover:bg-gray-800 border border-transparent hover:border-primary-200 dark:hover:border-gray-600;
     font-size: 15px;
     letter-spacing: -0.01em;
   }
   
   @media (min-width: 640px) {
     .nav-link-mobile {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
     }
   }
 
@@ -125,15 +131,95 @@ import DarkModeToggle from './DarkModeToggle.astro';
       display: block;
     }
   }
+
+  /* Enhanced mobile menu animation */
+  #mobile-menu {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  #mobile-menu.hidden {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Mobile menu button enhancement */
+  #mobile-menu-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #mobile-menu-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #6366f1, #d946ef);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0.75rem;
+  }
+
+  #mobile-menu-btn:hover::before {
+    opacity: 0.05;
+  }
+
+  /* Focus enhancement */
+  #mobile-menu-btn:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
     
     mobileMenuBtn?.addEventListener('click', () => {
-      mobileMenu?.classList.toggle('hidden');
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        mobileMenu?.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        mobileMenuBtn.setAttribute('aria-label', 'Fermer le menu');
+        
+        // Change icon to X
+        const svg = mobileMenuBtn.querySelector('svg');
+        if (svg) {
+          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+        }
+      } else {
+        mobileMenu?.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.setAttribute('aria-label', 'Ouvrir le menu');
+        
+        // Change icon back to hamburger
+        const svg = mobileMenuBtn.querySelector('svg');
+        if (svg) {
+          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+        }
+      }
     });
 
     // Close mobile menu when clicking on a link
@@ -141,7 +227,26 @@ import DarkModeToggle from './DarkModeToggle.astro';
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu?.classList.add('hidden');
+        isMenuOpen = false;
+        mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn?.setAttribute('aria-label', 'Ouvrir le menu');
+        
+        // Reset icon
+        const svg = mobileMenuBtn?.querySelector('svg');
+        if (svg) {
+          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+        }
       });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        mobileMenu?.classList.add('hidden');
+        isMenuOpen = false;
+        mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn?.focus();
+      }
     });
 
     // Smooth scroll for all navigation links
@@ -162,9 +267,11 @@ import DarkModeToggle from './DarkModeToggle.astro';
       });
     });
 
-    // Enhanced header scroll effect
+    // Enhanced header scroll effect with performance optimization
+    let ticking = false;
     let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', () => {
+    
+    function updateHeader() {
       const header = document.querySelector('header');
       const currentScrollY = window.scrollY;
       
@@ -177,6 +284,14 @@ import DarkModeToggle from './DarkModeToggle.astro';
       }
       
       lastScrollY = currentScrollY;
-    });
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
   });
 </script>
