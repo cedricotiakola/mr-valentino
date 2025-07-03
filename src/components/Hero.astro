@@ -9,12 +9,12 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
   
   <!-- Floating Elements with better positioning -->
   <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute top-20 left-10 w-24 h-24 bg-accent-400/20 rounded-full animate-float blur-sm"></div>
-    <div class="absolute top-40 right-20 w-20 h-20 bg-soul-400/20 rounded-full animate-float blur-sm" style="animation-delay: 1s;"></div>
-    <div class="absolute bottom-40 left-20 w-16 h-16 bg-primary-400/20 rounded-full animate-float blur-sm" style="animation-delay: 2s;"></div>
-    <div class="absolute bottom-20 right-10 w-28 h-28 bg-accent-400/20 rounded-full animate-float blur-sm" style="animation-delay: 0.5s;"></div>
-    <div class="absolute top-1/2 left-1/4 w-12 h-12 bg-soul-400/15 rounded-full animate-float blur-sm" style="animation-delay: 1.5s;"></div>
-    <div class="absolute top-1/3 right-1/3 w-18 h-18 bg-primary-400/15 rounded-full animate-float blur-sm" style="animation-delay: 2.5s;"></div>
+    <div class="absolute top-16 sm:top-20 left-4 sm:left-10 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 bg-accent-400/20 rounded-full animate-float blur-sm"></div>
+    <div class="absolute top-32 sm:top-40 right-8 sm:right-20 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 bg-soul-400/20 rounded-full animate-float blur-sm" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-32 sm:bottom-40 left-8 sm:left-20 w-10 sm:w-12 lg:w-16 h-10 sm:h-12 lg:h-16 bg-primary-400/20 rounded-full animate-float blur-sm" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-16 sm:bottom-20 right-4 sm:right-10 w-20 sm:w-24 lg:w-28 h-20 sm:h-24 lg:h-28 bg-accent-400/20 rounded-full animate-float blur-sm" style="animation-delay: 0.5s;"></div>
+    <div class="absolute top-1/2 left-1/4 w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-soul-400/15 rounded-full animate-float blur-sm" style="animation-delay: 1.5s;"></div>
+    <div class="absolute top-1/3 right-1/3 w-12 sm:w-14 lg:w-18 h-12 sm:h-14 lg:h-18 bg-primary-400/15 rounded-full animate-float blur-sm" style="animation-delay: 2.5s;"></div>
   </div>
   
   <!-- Enhanced Background Pattern -->
@@ -33,117 +33,117 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
   </div>
 
   <!-- Language Switcher - Mobile -->
-  <div class="absolute top-6 right-6 z-20 md:hidden">
+  <div class="absolute top-4 sm:top-6 right-4 sm:right-6 z-20 lg:hidden">
     <LanguageSwitcher />
   </div>
 
   <!-- Enhanced Content -->
-  <div class="relative z-10 container mx-auto px-4 text-center text-white">
-    <div class="max-w-5xl mx-auto space-y-10">
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+    <div class="max-w-5xl mx-auto space-y-6 sm:space-y-8 lg:space-y-10">
       <!-- Enhanced Main Title with Brand Elements -->
-      <div class="space-y-6">
-        <div class="inline-flex items-center space-x-6 mb-8">
+      <div class="space-y-4 sm:space-y-6">
+        <div class="inline-flex items-center space-x-3 sm:space-x-4 lg:space-x-6 mb-6 sm:mb-8">
           <div class="relative">
-            <div class="w-20 h-20 bg-gradient-brand rounded-3xl flex items-center justify-center shadow-glow animate-glow">
-              <span class="text-white font-bold text-2xl tracking-tight">MV</span>
+            <div class="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-brand rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-glow animate-glow">
+              <span class="text-white font-bold text-xl sm:text-2xl tracking-tight">MV</span>
             </div>
             <!-- Enhanced glow effect -->
-            <div class="absolute inset-0 w-20 h-20 bg-gradient-brand rounded-3xl opacity-50 blur-xl animate-pulse"></div>
+            <div class="absolute inset-0 w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-gradient-brand rounded-2xl sm:rounded-3xl opacity-50 blur-xl animate-pulse"></div>
           </div>
-          <div class="h-16 w-px bg-gradient-to-b from-transparent via-white/60 to-transparent"></div>
-          <div class="flex items-center space-x-3">
-            <div class="w-8 h-5 bg-cameroon-green rounded-sm shadow-lg"></div>
-            <div class="w-8 h-5 bg-cameroon-red rounded-sm shadow-lg"></div>
-            <div class="w-8 h-5 bg-cameroon-yellow rounded-sm shadow-lg"></div>
+          <div class="h-12 sm:h-14 lg:h-16 w-px bg-gradient-to-b from-transparent via-white/60 to-transparent"></div>
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <div class="w-6 h-4 sm:w-7 sm:h-5 lg:w-8 lg:h-5 bg-cameroon-green rounded-sm shadow-lg"></div>
+            <div class="w-6 h-4 sm:w-7 sm:h-5 lg:w-8 lg:h-5 bg-cameroon-red rounded-sm shadow-lg"></div>
+            <div class="w-6 h-4 sm:w-7 sm:h-5 lg:w-8 lg:h-5 bg-cameroon-yellow rounded-sm shadow-lg"></div>
           </div>
         </div>
         
-        <h1 class="text-7xl md:text-9xl font-black leading-none animate-fade-in tracking-tight">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none animate-fade-in tracking-tight">
           <span data-i18n="hero.title" class="bg-gradient-to-r from-white via-accent-200 to-white bg-clip-text text-transparent drop-shadow-2xl">Mr Valentino</span>
         </h1>
         
-        <div class="flex items-center justify-center space-x-6 mt-8">
-          <div class="h-px bg-gradient-to-r from-transparent via-white/60 to-transparent flex-1 max-w-40"></div>
-          <div class="text-accent-400 text-3xl animate-pulse">♪</div>
-          <div class="h-px bg-gradient-to-r from-transparent via-white/60 to-transparent flex-1 max-w-40"></div>
+        <div class="flex items-center justify-center space-x-4 sm:space-x-6 mt-6 sm:mt-8">
+          <div class="h-px bg-gradient-to-r from-transparent via-white/60 to-transparent flex-1 max-w-24 sm:max-w-32 lg:max-w-40"></div>
+          <div class="text-accent-400 text-2xl sm:text-3xl animate-pulse">♪</div>
+          <div class="h-px bg-gradient-to-r from-transparent via-white/60 to-transparent flex-1 max-w-24 sm:max-w-32 lg:max-w-40"></div>
         </div>
       </div>
       
-      <p class="text-3xl md:text-4xl text-blue-100 font-light animate-slide-up leading-relaxed tracking-wide" data-i18n="hero.subtitle">
+      <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-blue-100 font-light animate-slide-up leading-relaxed tracking-wide px-4" data-i18n="hero.subtitle">
         La voix du cœur. L'émotion sans filtre.
       </p>
       
-      <p class="text-xl md:text-2xl text-blue-200 max-w-4xl mx-auto animate-slide-up leading-relaxed" style="animation-delay: 0.2s;" data-i18n="hero.description">
+      <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-200 max-w-4xl mx-auto animate-slide-up leading-relaxed px-4" style="animation-delay: 0.2s;" data-i18n="hero.description">
         Chanteur franco-camerounais, passionné par la musique qui émeut et rassemble.
       </p>
 
       <!-- Enhanced Achievement Badges -->
-      <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mt-16 animate-slide-up" style="animation-delay: 0.4s;">
-        <div class="group bg-white/15 backdrop-blur-xl rounded-3xl px-8 py-6 border border-white/30 hover:bg-white/25 transition-all duration-500 hover:scale-110 shadow-2xl hover:shadow-accent/20">
-          <div class="flex items-center space-x-4">
-            <div class="w-14 h-14 bg-accent-500 rounded-2xl flex items-center justify-center shadow-xl">
-              <span class="text-white font-bold text-2xl">🏆</span>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-10 mt-12 sm:mt-16 animate-slide-up px-4" style="animation-delay: 0.4s;">
+        <div class="group bg-white/15 backdrop-blur-xl rounded-2xl sm:rounded-3xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border border-white/30 hover:bg-white/25 transition-all duration-500 hover:scale-110 shadow-2xl hover:shadow-accent/20 w-full sm:w-auto">
+          <div class="flex items-center space-x-3 sm:space-x-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-accent-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl">
+              <span class="text-white font-bold text-lg sm:text-xl lg:text-2xl">🏆</span>
             </div>
             <div class="text-left">
-              <div class="text-accent-300 font-bold text-lg">2024</div>
-              <div class="text-white text-lg font-semibold" data-i18n="hero.ccnbWinner">Vainqueur CCNB sur scène</div>
+              <div class="text-accent-300 font-bold text-base sm:text-lg">2024</div>
+              <div class="text-white text-sm sm:text-base lg:text-lg font-semibold" data-i18n="hero.ccnbWinner">Vainqueur CCNB sur scène</div>
             </div>
           </div>
         </div>
         
-        <div class="group bg-white/15 backdrop-blur-xl rounded-3xl px-8 py-6 border border-white/30 hover:bg-white/25 transition-all duration-500 hover:scale-110 shadow-2xl hover:shadow-soul/20">
-          <div class="flex items-center space-x-4">
-            <div class="w-14 h-14 bg-soul-500 rounded-2xl flex items-center justify-center shadow-xl">
-              <span class="text-white font-bold text-2xl">💫</span>
+        <div class="group bg-white/15 backdrop-blur-xl rounded-2xl sm:rounded-3xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border border-white/30 hover:bg-white/25 transition-all duration-500 hover:scale-110 shadow-2xl hover:shadow-soul/20 w-full sm:w-auto">
+          <div class="flex items-center space-x-3 sm:space-x-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-soul-500 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl">
+              <span class="text-white font-bold text-lg sm:text-xl lg:text-2xl">💫</span>
             </div>
             <div class="text-left">
-              <div class="text-soul-300 font-bold text-lg">2024</div>
-              <div class="text-white text-lg font-semibold" data-i18n="hero.publicChoice">Coup de cœur du public - Caraquet</div>
+              <div class="text-soul-300 font-bold text-base sm:text-lg">2024</div>
+              <div class="text-white text-sm sm:text-base lg:text-lg font-semibold" data-i18n="hero.publicChoice">Coup de cœur du public - Caraquet</div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Enhanced Call to Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-8 mt-20 animate-slide-up" style="animation-delay: 0.6s;">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 mt-16 sm:mt-20 animate-slide-up px-4" style="animation-delay: 0.6s;">
         <a 
           href="#music" 
-          class="group relative bg-gradient-to-r from-accent-500 via-accent-600 to-accent-700 hover:from-accent-600 hover:via-accent-700 hover:to-accent-800 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-accent/40 flex items-center overflow-hidden"
+          class="group relative bg-gradient-to-r from-accent-500 via-accent-600 to-accent-700 hover:from-accent-600 hover:via-accent-700 hover:to-accent-800 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-accent/40 flex items-center overflow-hidden w-full sm:w-auto justify-center"
         >
           <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-          <span class="relative mr-4 text-2xl">🎧</span>
+          <span class="relative mr-3 sm:mr-4 text-xl sm:text-2xl">🎧</span>
           <span class="relative tracking-wide" data-i18n="hero.listenMusic">Écouter ma musique</span>
-          <svg class="relative w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="relative w-5 h-5 sm:w-6 sm:h-6 ml-3 sm:ml-4 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </a>
         
         <a 
           href="#events" 
-          class="group relative bg-transparent border-3 border-white/60 text-white hover:bg-white hover:text-primary-900 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 transform hover:scale-110 backdrop-blur-sm flex items-center overflow-hidden shadow-2xl hover:shadow-white/20"
+          class="group relative bg-transparent border-2 sm:border-3 border-white/60 text-white hover:bg-white hover:text-primary-900 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-500 transform hover:scale-110 backdrop-blur-sm flex items-center overflow-hidden shadow-2xl hover:shadow-white/20 w-full sm:w-auto justify-center"
         >
           <div class="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></div>
-          <span class="relative mr-4 text-2xl">🎤</span>
+          <span class="relative mr-3 sm:mr-4 text-xl sm:text-2xl">🎤</span>
           <span class="relative tracking-wide" data-i18n="hero.watchPerformances">Voir mes événements</span>
         </a>
       </div>
 
       <!-- Enhanced Social Proof -->
-      <div class="mt-20 animate-slide-up" style="animation-delay: 0.8s;">
-        <div class="flex items-center justify-center space-x-12 text-white/80">
+      <div class="mt-16 sm:mt-20 animate-slide-up px-4" style="animation-delay: 0.8s;">
+        <div class="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-8 lg:space-x-12 text-white/80">
           <div class="text-center group hover:scale-110 transition-transform duration-300">
-            <div class="text-3xl font-black text-accent-400 mb-2">2024</div>
-            <div class="text-sm font-medium tracking-wide">Année de consécration</div>
+            <div class="text-2xl sm:text-3xl font-black text-accent-400 mb-2">2024</div>
+            <div class="text-xs sm:text-sm font-medium tracking-wide">Année de consécration</div>
           </div>
-          <div class="w-px h-16 bg-white/40"></div>
+          <div class="w-16 h-px sm:w-px sm:h-16 bg-white/40"></div>
           <div class="text-center group hover:scale-110 transition-transform duration-300">
-            <div class="text-3xl font-black text-soul-400 mb-2">2</div>
-            <div class="text-sm font-medium tracking-wide">Prix remportés</div>
+            <div class="text-2xl sm:text-3xl font-black text-soul-400 mb-2">2</div>
+            <div class="text-xs sm:text-sm font-medium tracking-wide">Prix remportés</div>
           </div>
-          <div class="w-px h-16 bg-white/40"></div>
+          <div class="w-16 h-px sm:w-px sm:h-16 bg-white/40"></div>
           <div class="text-center group hover:scale-110 transition-transform duration-300">
-            <div class="text-3xl font-black text-primary-400 mb-2">∞</div>
-            <div class="text-sm font-medium tracking-wide">Émotions partagées</div>
+            <div class="text-2xl sm:text-3xl font-black text-primary-400 mb-2">∞</div>
+            <div class="text-xs sm:text-sm font-medium tracking-wide">Émotions partagées</div>
           </div>
         </div>
       </div>
@@ -151,12 +151,12 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
   </div>
 
   <!-- Enhanced Scroll Indicator -->
-  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+  <div class="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
     <a href="#about" class="group flex flex-col items-center text-white/70 hover:text-white transition-all duration-300">
-      <div class="w-8 h-12 border-2 border-current rounded-full flex justify-center relative overflow-hidden">
-        <div class="w-1.5 h-4 bg-current rounded-full mt-3 animate-pulse"></div>
+      <div class="w-6 h-10 sm:w-8 sm:h-12 border-2 border-current rounded-full flex justify-center relative overflow-hidden">
+        <div class="w-1 sm:w-1.5 h-3 sm:h-4 bg-current rounded-full mt-2 sm:mt-3 animate-pulse"></div>
       </div>
-      <span class="text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium tracking-wide">Découvrir</span>
+      <span class="text-xs sm:text-sm mt-2 sm:mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium tracking-wide">Découvrir</span>
     </a>
   </div>
 </section>
@@ -172,5 +172,39 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
   
   .drop-shadow-2xl {
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (max-height: 600px) {
+    #home {
+      min-height: 100vh;
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    }
+    
+    .space-y-6 > * + * {
+      margin-top: 1rem;
+    }
+    
+    .space-y-8 > * + * {
+      margin-top: 1.5rem;
+    }
+    
+    .space-y-10 > * + * {
+      margin-top: 2rem;
+    }
+  }
+
+  @media (max-height: 500px) {
+    .animate-bounce {
+      display: none;
+    }
   }
 </style>

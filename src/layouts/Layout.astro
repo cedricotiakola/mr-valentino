@@ -11,11 +11,13 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
 <html lang="fr" class="scroll-smooth" data-i18n-title="hero.title">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <title>{title}</title>
     
     <!-- Enhanced Font Loading -->
@@ -42,6 +44,8 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
   html {
     scroll-behavior: smooth;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    /* Support for iOS safe areas */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
   
   body {
@@ -49,6 +53,10 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
     font-optical-sizing: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+    /* Improve touch scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
   }
   
   /* Enhanced scroll animations */
@@ -262,10 +270,111 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
   .dark #video-modal .bg-white {
     background-color: #1f2937 !important;
   }
+
+  /* Responsive improvements */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    /* Improve touch targets on mobile */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better spacing on mobile */
+    .space-y-6 > * + * {
+      margin-top: 1rem;
+    }
+    
+    .space-y-8 > * + * {
+      margin-top: 1.5rem;
+    }
+    
+    .space-y-10 > * + * {
+      margin-top: 2rem;
+    }
+  }
+
+  /* Landscape mobile adjustments */
+  @media (max-height: 600px) and (orientation: landscape) {
+    .min-h-screen {
+      min-height: 100vh;
+    }
+    
+    .py-24 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    
+    .py-20 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    
+    .py-16 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  /* High DPI displays */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .shadow-brand,
+    .shadow-brand-lg,
+    .shadow-soul,
+    .shadow-accent {
+      filter: blur(0.5px);
+    }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    
+    .animate-on-scroll {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    .fixed,
+    .sticky,
+    button,
+    .animate-on-scroll {
+      position: static !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    
+    .shadow-lg,
+    .shadow-xl,
+    .shadow-2xl {
+      box-shadow: none !important;
+    }
+    
+    .bg-gradient-to-r,
+    .bg-gradient-to-br,
+    .bg-gradient-brand {
+      background: #f9fafb !important;
+      color: #111827 !important;
+    }
+  }
 </style>
 
 <script>
-  // Enhanced animation on scroll with stagger effect
+  // Enhanced animation on scroll with stagger effect and performance optimization
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -274,9 +383,12 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, index * 100); // Stagger animation
+        // Use requestAnimationFrame for better performance
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100); // Stagger animation
+        });
       }
     });
   }, observerOptions);
@@ -287,31 +399,78 @@ const { title = "Mr Valentino - La voix du cœur", description = "Chanteur franc
       observer.observe(el);
     });
     
-    // Add loading animation
+    // Add loading animation with better performance
     document.body.style.opacity = '0';
     document.body.style.transform = 'translateY(20px)';
     
-    setTimeout(() => {
-      document.body.style.transition = 'all 0.6s ease';
-      document.body.style.opacity = '1';
-      document.body.style.transform = 'translateY(0)';
-    }, 100);
+    // Use requestAnimationFrame for smoother animation
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        document.body.style.transition = 'all 0.6s ease';
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'translateY(0)';
+      }, 100);
+    });
     
-    // Enhanced smooth scroll for anchor links
+    // Enhanced smooth scroll for anchor links with mobile optimization
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          const headerHeight = 80;
+          const headerHeight = window.innerWidth >= 1024 ? 80 : 70;
           const targetPosition = target.offsetTop - headerHeight;
           
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+          // Use native smooth scroll with fallback
+          if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          } else {
+            // Fallback for older browsers
+            window.scrollTo(0, targetPosition);
+          }
         }
       });
     });
+
+    // Optimize scroll performance
+    let ticking = false;
+    function updateScrollEffects() {
+      // Your scroll effects here
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollEffects);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Handle orientation change
+    window.addEventListener('orientationchange', () => {
+      setTimeout(() => {
+        window.scrollTo(0, window.scrollY);
+      }, 100);
+    });
+
+    // Improve touch performance on mobile
+    if ('ontouchstart' in window) {
+      document.body.classList.add('touch-device');
+    }
   });
+
+  // Performance monitoring
+  if ('performance' in window && 'measure' in window.performance) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const perfData = performance.getEntriesByType('navigation')[0];
+        if (perfData && perfData.loadEventEnd > 0) {
+          console.log(`Page load time: ${perfData.loadEventEnd - perfData.fetchStart}ms`);
+        }
+      }, 0);
+    });
+  }
 </script>

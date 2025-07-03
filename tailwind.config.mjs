@@ -4,6 +4,19 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1920px',
+        // Height-based breakpoints
+        'h-sm': { 'raw': '(max-height: 600px)' },
+        'h-md': { 'raw': '(max-height: 800px)' },
+        'h-lg': { 'raw': '(min-height: 801px)' },
+      },
       colors: {
         // Palette principale inspirée de la musique et de l'émotion
         primary: {
@@ -85,6 +98,11 @@ export default {
         '18': '4.5rem',
         '88': '22rem',
         '128': '32rem',
+        // Responsive spacing
+        'safe-top': 'env(safe-area-inset-top)',
+        'safe-bottom': 'env(safe-area-inset-bottom)',
+        'safe-left': 'env(safe-area-inset-left)',
+        'safe-right': 'env(safe-area-inset-right)',
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-in-out',
@@ -167,7 +185,95 @@ export default {
         'wider': '0.05em',
         'widest': '0.1em',
       },
+      // Container queries
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '1.5rem',
+          lg: '2rem',
+          xl: '2.5rem',
+          '2xl': '3rem',
+        },
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1400px',
+        },
+      },
+      // Aspect ratios
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '3/2': '3 / 2',
+        '2/3': '2 / 3',
+        '9/16': '9 / 16',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    // Add responsive utilities
+    function({ addUtilities, theme }) {
+      const newUtilities = {
+        // Safe area utilities
+        '.pt-safe': {
+          paddingTop: 'env(safe-area-inset-top)',
+        },
+        '.pb-safe': {
+          paddingBottom: 'env(safe-area-inset-bottom)',
+        },
+        '.pl-safe': {
+          paddingLeft: 'env(safe-area-inset-left)',
+        },
+        '.pr-safe': {
+          paddingRight: 'env(safe-area-inset-right)',
+        },
+        // Responsive text utilities
+        '.text-responsive-xs': {
+          fontSize: '0.75rem',
+          '@media (min-width: 640px)': {
+            fontSize: '0.875rem',
+          },
+        },
+        '.text-responsive-sm': {
+          fontSize: '0.875rem',
+          '@media (min-width: 640px)': {
+            fontSize: '1rem',
+          },
+        },
+        '.text-responsive-base': {
+          fontSize: '1rem',
+          '@media (min-width: 640px)': {
+            fontSize: '1.125rem',
+          },
+        },
+        '.text-responsive-lg': {
+          fontSize: '1.125rem',
+          '@media (min-width: 640px)': {
+            fontSize: '1.25rem',
+          },
+        },
+        '.text-responsive-xl': {
+          fontSize: '1.25rem',
+          '@media (min-width: 640px)': {
+            fontSize: '1.5rem',
+          },
+        },
+        // Responsive spacing utilities
+        '.space-responsive': {
+          '& > * + *': {
+            marginTop: '1rem',
+            '@media (min-width: 640px)': {
+              marginTop: '1.5rem',
+            },
+            '@media (min-width: 1024px)': {
+              marginTop: '2rem',
+            },
+          },
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
 }
